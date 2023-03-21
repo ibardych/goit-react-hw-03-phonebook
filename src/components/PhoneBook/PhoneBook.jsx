@@ -29,7 +29,7 @@ class PhoneBook extends Component {
     const contacts = window.localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
 
-    if (parsedContacts.length) this.setState({ contacts: parsedContacts });
+    if (parsedContacts) this.setState({ contacts: parsedContacts });
   }
 
   addContact = (e, { name, number }) => {
