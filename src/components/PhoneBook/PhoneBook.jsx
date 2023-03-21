@@ -36,9 +36,9 @@ class PhoneBook extends Component {
     e.preventDefault();
 
     if (
-      this.state.contacts.some(
-        contact => contact.name.toLowerString === name.toLowerString
-      )
+      this.state.contacts.some(contact => {
+        return contact.name.toLowerCase() === name.toLowerCase();
+      })
     ) {
       this.setState({
         modalMessage: `${name} is already in contacts.`,
